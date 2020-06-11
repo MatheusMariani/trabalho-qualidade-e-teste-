@@ -1,0 +1,36 @@
+CREATE TABLE customer (
+                          id INT PRIMARY KEY,
+                          name VARCHAR(250) NOT NULL,
+                          cpf VARCHAR(250) NOT NULL,
+                          email VARCHAR(250) NOT NULL,
+                          phone VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE products (
+                          id INT PRIMARY KEY,
+                          name VARCHAR(250) NOT NULL,
+                          price NUMERIC(8,2) NOT NULL
+);
+
+CREATE TABLE SALES (
+                       id INT PRIMARY KEY,
+                       client_id int not null,
+                       product_id int not null,
+                       FOREIGN KEY (client_id) REFERENCES customer(id),
+                       FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+INSERT INTO customer (id,name, cpf, email, phone) VALUES
+(1,'Matheus', '24514587901', 'matheusjava@java.com','998252521'),
+(2,'luiz', '24514587902', 'luizjava@java.com','998252522'),
+(3,'Thiago', '24514587903', 'thiagojava@java.com','998252523');
+
+INSERT INTO products(id, name, price) values
+(1,'Microfone gamer',23.50),
+(2,'Pc gamer',550.50),
+(3,'Teclado gamer',103.90);
+
+INSERT INTO SALES (id,client_id,product_id)VALUES
+(1,1,3),
+(2,2,3),
+(3,2,1),

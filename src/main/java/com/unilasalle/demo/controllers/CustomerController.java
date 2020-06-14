@@ -1,16 +1,17 @@
 package com.unilasalle.demo.controllers;
 
-import com.unilasalle.demo.Service.CustomerService;
+import com.unilasalle.demo.services.CustomerService;
 import com.unilasalle.demo.entities.Customer;
 import com.unilasalle.demo.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Optional;
 
+@Controller
 public class CustomerController {
 
     @Autowired

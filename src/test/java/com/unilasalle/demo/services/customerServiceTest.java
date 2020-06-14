@@ -1,4 +1,4 @@
-package com.unilasalle.demo.Service;
+package com.unilasalle.demo.services;
 
 
 import com.unilasalle.demo.entities.Customer;

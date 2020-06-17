@@ -12,4 +12,8 @@ public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
     @Query(value = "select * from customer where email = :email", nativeQuery = true)
     Customer findUserByEmail(@Param("email") String email);
+    
+    Customer findCustomerById(int id);
+    
+    Customer findByCPF(String cpf);
 }

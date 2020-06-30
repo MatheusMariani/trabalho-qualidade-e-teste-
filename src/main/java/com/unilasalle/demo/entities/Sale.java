@@ -8,21 +8,25 @@ import java.util.List;
 public class Sale {
 
     @Id
-    private int id;
+    private Long id;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "client_id",referencedColumnName = "id")
     private Customer customer;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "ID",referencedColumnName = "id")
+    @ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "product_sale",
+            joinColumns = {@JoinColumn(name = "PRODUCT_ID")},
+            inverseJoinColumns = {@JoinColumn(name = "SALE_ID")}
+    )
     private List<Product> products;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

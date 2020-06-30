@@ -3,10 +3,7 @@ package com.unilasalle.demo.entities;
 import lombok.Builder;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
@@ -14,7 +11,7 @@ import javax.persistence.Table;
 public class Customer {
 
     @Id
-    private int Id;
+    private Long Id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -25,11 +22,11 @@ public class Customer {
     @Column(name = "PHONE")
     private String phone;
 
-    public int getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 

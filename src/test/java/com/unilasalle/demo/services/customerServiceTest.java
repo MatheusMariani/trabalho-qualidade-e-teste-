@@ -19,10 +19,10 @@ public class customerServiceTest {
     @Test
     public void shouldReturnTrueWhenValidCustomer(){
         Customer customer = new Customer();
-        customer.setId(1);
+        customer.setId((long) 1);
         customer.setName("Matheus");
         customer.setEmail("matheusjava@java.com");
-        customer.setPhone("test");
+        customer.setPhone("5112345678");
         customer.setCpf("235.502.205-15");
 
         Assert.assertTrue(customerService.validateCustomer(customer));
@@ -31,7 +31,7 @@ public class customerServiceTest {
     @Test
     public void shouldReturnFalseWhenInvalidCpf(){
         Customer customer = new Customer();
-        customer.setId(1);
+        customer.setId((long) 1);
         customer.setName("Matheus");
         customer.setEmail("matheusjava@java.com");
         customer.setPhone("test");
@@ -43,7 +43,7 @@ public class customerServiceTest {
     @Test
     public void shouldReturnFalseWhenNameIsBlank(){
         Customer customer = new Customer();
-        customer.setId(1);
+        customer.setId((long) 1);
         customer.setName("");
         customer.setEmail("matheusjava@java.com");
         customer.setPhone("test");
@@ -55,7 +55,7 @@ public class customerServiceTest {
     @Test
     public void shouldReturnFalseWhenInvalidEmail(){
         Customer customer = new Customer();
-        customer.setId(1);
+        customer.setId((long) 1);
         customer.setName("Matheus");
         customer.setEmail("INVALID EMAIL");
         customer.setPhone("test");

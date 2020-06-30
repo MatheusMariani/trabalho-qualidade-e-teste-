@@ -8,17 +8,17 @@ public class Product {
 
 
     @Id
-    private int Id;
+    private Long Id;
     @Column(name = "NAME", nullable = false)
     private String name;
     @Column(name = "PRICE", nullable = false)
     private double price;
 
-    public int getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         Id = id;
     }
 

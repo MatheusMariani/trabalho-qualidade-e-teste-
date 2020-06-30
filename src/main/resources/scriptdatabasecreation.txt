@@ -20,6 +20,8 @@ CREATE TABLE SALES (
                        FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
+CREATE TABLE ADRESS()
+
 INSERT INTO customer (id,name, cpf, email, phone) VALUES
 (1,'Matheus', '24514587901', 'matheusjava@java.com','998252521'),
 (2,'luiz', '24514587902', 'luizjava@java.com','998252522'),
@@ -30,7 +32,3 @@ INSERT INTO products(id, name, price) values
 (2,'Pc gamer',550.50),
 (3,'Teclado gamer',103.90);
 
-INSERT INTO SALES (id,client_id,product_id)VALUES
-(1,1,3),
-(2,2,3),
-(3,2,1),

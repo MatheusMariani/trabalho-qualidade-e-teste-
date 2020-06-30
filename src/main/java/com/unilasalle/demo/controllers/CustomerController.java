@@ -22,11 +22,16 @@ public class CustomerController {
 
     @PostMapping("/api/customer")
     public ResponseEntity<?> insertCustomer(@RequestBody Customer customer) {
-        if (customerService.validateCustomer(customer)) {
-            customerRepository.save(customer);
-            return new ResponseEntity<>(HttpStatus.OK);
+
+        try {
+            if (customerService.validateCustomer(customer)) {
+                customerRepository.save(customer);
+                return new ResponseEntity<>(HttpStatus.OK);
+            } else
+                throw new Exception("Usuario invalido");
+        } catch (Exception ex) {
+            return new ResponseEntity<>(ex.getMessage(),HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/api/customer/{id}")
